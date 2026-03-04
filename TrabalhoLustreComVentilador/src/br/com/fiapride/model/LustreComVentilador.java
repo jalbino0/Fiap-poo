@@ -5,12 +5,10 @@ import java.util.regex.Pattern;
 
 public class LustreComVentilador {
 
-    // Atributos
     public String estrutura;
     public String tamanho;
     public String material;
 
-    // Estado derivado da estrutura
     private int qtdPas;
     private int qtdLampadas;
 
@@ -21,20 +19,16 @@ public class LustreComVentilador {
         extrairDadosDaEstrutura();
     }
 
-    // Método 1 (NOVO) - altera atributo + validação
-    // Atualiza a estrutura e recalcula pás/lâmpadas
     public boolean alterarEstrutura(String novaEstrutura) {
         if (novaEstrutura == null || novaEstrutura.trim().isEmpty()) {
             return false; // inválido
         }
 
-        // precisa ter 2 números na string (pás e lâmpadas)
         int[] dados = extrairNumeros(novaEstrutura);
         if (dados == null) {
             return false; // inválido
         }
 
-        // regras mínimas de consistência (não pode ter negativo)
         if (dados[0] < 0 || dados[1] < 0) {
             return false;
         }
@@ -45,7 +39,6 @@ public class LustreComVentilador {
         return true;
     }
 
-    // Método 2 (NOVO) - altera atributo + validação
     public boolean alterarTamanho(String novoTamanho) {
         if (novoTamanho == null || novoTamanho.trim().isEmpty()) {
             return false;
@@ -54,7 +47,6 @@ public class LustreComVentilador {
         return true;
     }
 
-    // Avaliação (não altera estado)
     public boolean ventila() {
         return qtdPas >= 3;
     }
@@ -78,7 +70,6 @@ public class LustreComVentilador {
         System.out.println();
     }
 
-    // ---------- Helpers ----------
     private void extrairDadosDaEstrutura() {
         int[] dados = extrairNumeros(this.estrutura);
         if (dados == null) {
@@ -90,7 +81,6 @@ public class LustreComVentilador {
         }
     }
 
-    // extrai os 2 primeiros números encontrados (pás e lâmpadas)
     private int[] extrairNumeros(String texto) {
         if (texto == null) return null;
 
