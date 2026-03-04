@@ -1,7 +1,9 @@
 *.class
 
-bin/
+.vscode/
+.idea/
+*.iml
+.metadata/
 
-.settings/
-
-*.log
+9 bin/
+10 target/
