@@ -18,13 +18,14 @@ public class SistemaPrincipal {
         lustre1.exibirInformacoes("Lustre 1");
         lustre2.exibirInformacoes("Lustre 2");
 
-        System.out.println("--- Alterando dados com setters ---");
-        lustre2.setTamanho("Grande");
-        lustre2.setMaterial("Metal");
+        System.out.println("--- Alterando dados ---");
+        lustre2.atualizarTamanho("Grande");
+        lustre2.atualizarMaterial("Metal");
+        lustre2.atualizarEstrutura("4 hélices e 3 lâmpadas");
 
         System.out.println("\n--- Testando regras de validação ---");
-        lustre2.setTamanho("");
-        lustre2.setMaterial(null);
+        lustre2.atualizarTamanho("");
+        lustre2.atualizarMaterial(null);
 
         System.out.println("\n--- Estado Final ---");
         lustre1.exibirInformacoes("Lustre 1");
