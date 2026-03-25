@@ -16,7 +16,27 @@ public class LustreComVentilador {
         return this.estrutura;
     }
 
-    public void setEstrutura(String estrutura) {
+    public String getTamanho() {
+        return this.tamanho;
+    }
+
+    public String getMaterial() {
+        return this.material;
+    }
+
+    public void atualizarEstrutura(String novaEstrutura) {
+        this.setEstrutura(novaEstrutura);
+    }
+
+    public void atualizarTamanho(String novoTamanho) {
+        this.setTamanho(novoTamanho);
+    }
+
+    public void atualizarMaterial(String novoMaterial) {
+        this.setMaterial(novoMaterial);
+    }
+
+    private void setEstrutura(String estrutura) {
         if (estrutura != null && !estrutura.trim().isEmpty()) {
             this.estrutura = estrutura;
         } else {
@@ -24,11 +44,7 @@ public class LustreComVentilador {
         }
     }
 
-    public String getTamanho() {
-        return this.tamanho;
-    }
-
-    public void setTamanho(String tamanho) {
+    private void setTamanho(String tamanho) {
         if (tamanho != null && !tamanho.trim().isEmpty()) {
             this.tamanho = tamanho;
         } else {
@@ -36,11 +52,7 @@ public class LustreComVentilador {
         }
     }
 
-    public String getMaterial() {
-        return this.material;
-    }
-
-    public void setMaterial(String material) {
+    private void setMaterial(String material) {
         if (material != null && !material.trim().isEmpty()) {
             this.material = material;
         } else {
