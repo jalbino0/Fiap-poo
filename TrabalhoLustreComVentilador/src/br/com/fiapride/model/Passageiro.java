@@ -12,9 +12,7 @@ public class Passageiro {
         this.setSaldo(0);
     }
 
-
     public void adicionarSaldo(double valor) {
-
         if (valor <= 0) {
             System.out.println("Erro: O valor de recarga deve ser maior que zero.");
             return;
@@ -25,7 +23,6 @@ public class Passageiro {
     }
 
     public void pagarViagem(double custo) {
-
         if (custo <= 0) {
             System.out.println("Erro: O custo da viagem é inválido.");
             return;
@@ -40,7 +37,6 @@ public class Passageiro {
         System.out.println("Viagem paga. Saldo restante: " + this.saldo);
     }
 
-
     public double getSaldo() {
         return this.saldo;
     }
@@ -53,9 +49,7 @@ public class Passageiro {
         return this.cpf;
     }
 
-
     private void setSaldo(double valor) {
-
         if (valor >= 0) {
             this.saldo = valor;
         } else {
@@ -64,10 +58,18 @@ public class Passageiro {
     }
 
     private void setNome(String nome) {
-        this.nome = nome;
+        if (nome != null && !nome.trim().isEmpty()) {
+            this.nome = nome;
+        } else {
+            System.out.println("Erro: o nome não pode ser vazio.");
+        }
     }
 
     private void setCpf(String cpf) {
-        this.cpf = cpf;
+        if (cpf != null && !cpf.trim().isEmpty()) {
+            this.cpf = cpf;
+        } else {
+            System.out.println("Erro: o CPF não pode ser vazio.");
+        }
     }
 }
