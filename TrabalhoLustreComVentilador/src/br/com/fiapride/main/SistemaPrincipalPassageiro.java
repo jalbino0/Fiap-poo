@@ -6,7 +6,7 @@ public class SistemaPrincipalPassageiro {
 
     public static void main(String[] args) {
 
-        System.out.println("--- Iniciando o Sistema FiapRide ---\n");
+        System.out.println("--- Iniciando o Sistema FiapRide / Passageiro ---\n");
 
         Passageiro passageiro1 = new Passageiro("Ana Silva", "222.222.222-22");
 
