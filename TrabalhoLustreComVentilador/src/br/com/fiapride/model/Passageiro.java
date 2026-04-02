@@ -14,31 +14,27 @@ public class Passageiro {
 
     public void adicionarSaldo(double valor) {
         if (valor <= 0) {
-            System.out.println("Erro: O valor de recarga deve ser maior que zero.");
+            System.out.println("Erro: o valor de recarga deve ser maior que zero.");
             return;
         }
 
         this.saldo += valor;
-        System.out.println("Recarga realizada. Novo saldo: " + this.saldo);
+        System.out.println("Recarga realizada. Novo saldo: R$ " + this.saldo);
     }
 
     public void pagarViagem(double custo) {
         if (custo <= 0) {
-            System.out.println("Erro: O custo da viagem é inválido.");
+            System.out.println("Erro: o custo da viagem é inválido.");
             return;
         }
 
         if (this.saldo < custo) {
-            System.out.println("Erro: Saldo insuficiente para realizar a viagem.");
+            System.out.println("Erro: saldo insuficiente para realizar a viagem.");
             return;
         }
 
         this.saldo -= custo;
-        System.out.println("Viagem paga. Saldo restante: " + this.saldo);
-    }
-
-    public double getSaldo() {
-        return this.saldo;
+        System.out.println("Viagem paga. Saldo restante: R$ " + this.saldo);
     }
 
     public String getNome() {
@@ -49,12 +45,8 @@ public class Passageiro {
         return this.cpf;
     }
 
-    private void setSaldo(double valor) {
-        if (valor >= 0) {
-            this.saldo = valor;
-        } else {
-            System.out.println("Erro de Segurança: tentativa de saldo negativo bloqueada.");
-        }
+    public double getSaldo() {
+        return this.saldo;
     }
 
     private void setNome(String nome) {
@@ -70,6 +62,14 @@ public class Passageiro {
             this.cpf = cpf;
         } else {
             System.out.println("Erro: o CPF não pode ser vazio.");
+        }
+    }
+
+    private void setSaldo(double saldo) {
+        if (saldo >= 0) {
+            this.saldo = saldo;
+        } else {
+            System.out.println("Erro: o saldo não pode ser negativo.");
         }
     }
 }
