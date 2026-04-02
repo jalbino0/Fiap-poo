@@ -5,11 +5,13 @@ public class LustreComVentilador {
     private String estrutura;
     private String tamanho;
     private String material;
+    private MotorVentilador motorInstalado;
 
-    public LustreComVentilador(String estrutura, String tamanho, String material) {
+    public LustreComVentilador(String estrutura, String tamanho, String material, MotorVentilador motorInstalado) {
         this.setEstrutura(estrutura);
         this.setTamanho(tamanho);
         this.setMaterial(material);
+        this.motorInstalado = motorInstalado;
     }
 
     public String getEstrutura() {
@@ -22,6 +24,10 @@ public class LustreComVentilador {
 
     public String getMaterial() {
         return this.material;
+    }
+
+    public MotorVentilador getMotorInstalado() {
+        return this.motorInstalado;
     }
 
     public void atualizarEstrutura(String novaEstrutura) {
@@ -65,6 +71,8 @@ public class LustreComVentilador {
         System.out.println("Estrutura: " + this.getEstrutura());
         System.out.println("Tamanho: " + this.getTamanho());
         System.out.println("Material: " + this.getMaterial());
+        System.out.println("Potência do motor: " + this.motorInstalado.getPotencia());
+        System.out.println("Velocidade máxima do motor: " + this.motorInstalado.getVelocidadeMaxima());
         System.out.println();
     }
 }
