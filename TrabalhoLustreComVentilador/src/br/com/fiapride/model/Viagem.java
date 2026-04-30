@@ -11,7 +11,7 @@ public class Viagem {
         this.setDestino(destino);
         this.solicitante = solicitante;
         this.veiculoUtilizado = veiculoUtilizado;
-        this.valor = 0.0;
+        this.setValor(0.0);
 
         System.out.println("Nova viagem solicitada para: " + this.destino);
     }
@@ -30,12 +30,24 @@ public class Viagem {
         return this.destino;
     }
 
+    public double getValor() {
+        return this.valor;
+    }
+
     public Passageiro getSolicitante() {
         return this.solicitante;
     }
 
     public Veiculo getVeiculoUtilizado() {
         return this.veiculoUtilizado;
+    }
+
+    public void setValor(double valor) {
+        if (valor >= 0) {
+            this.valor = valor;
+        } else {
+            System.out.println("Erro: o valor da viagem não pode ser negativo.");
+        }
     }
 
     private void setDestino(String destino) {
